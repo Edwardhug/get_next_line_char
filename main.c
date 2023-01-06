@@ -9,5 +9,7 @@ int	main()
 	fd = open("test/joe_dassin", O_RDONLY);
 	line = get_next_line(fd);
 	printf("%s", line);
+	line = get_next_line(fd);
+	printf("%s", line);
 	close (fd);
 }
