@@ -7,9 +7,12 @@ int	main()
 	char	*line;
 
 	fd = open("test/joe_dassin", O_RDONLY);
-	line = get_next_line(fd);
-	printf("%s", line);
-	line = get_next_line(fd);
-	printf("%s", line);
+	while (1)
+	{
+		line = get_next_line(fd);
+		printf("%s", line);
+		if (!line)
+			break ;
+	}
 	close (fd);
 }

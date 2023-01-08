@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 10:44:03 by lgabet            #+#    #+#             */
-/*   Updated: 2023/01/06 16:11:14 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/01/08 12:34:01 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,11 @@ char	*ft_strjoin(char *s1, char *s2, int size)
 		}
 	}
 	while (s2[j] && s2[j] != '\n')
-	{
-		str[i] = s2[j];
-		i++;
-		j++;
-	}
+		str[i++] = s2[j++];
+	if (s2[j] == '\n')
+		str[i++] = s2[j++];
 	str[i] = 0;
+	free(s1);
 	return (str);
 }
 
@@ -58,7 +57,10 @@ int	ft_lenline(char *str, char *buff)
 		while (buff[j])
 		{
 			if (buff[j] == '\n')
+			{
+				j++;
 				return (i + j);
+			}
 			j++;
 		}
 	}
@@ -79,4 +81,26 @@ int	have_newline(char *str)
 		i++;
 	}
 	return (0);
+}
+
+char	*ft_first_read(char *buff, char *str)
+{
+	int	i;
+
+	if (!buff)
+		return (str);
+	i = 0;
+	while (buff[i])
+		i++;
+	str = malloc(sizeof(char) * (i + 1));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (buff[i])
+	{
+		str[i] = buff[i];
+		i++;
+	}
+	str[i] = 0;
+	return (str);
 }
