@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 10:32:15 by lgabet            #+#    #+#             */
-/*   Updated: 2023/01/08 18:08:08 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/01/08 18:40:24 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,13 @@ char	*get_next_line(int fd)
 		return (NULL);
 	// 1. fill line
 	line = ft_fill_line(fd, buff);
-	if (!line || ft_strlen(line) == 0)
+	if (!line)
 		return (NULL);
+	if (ft_strlen(line) == 0)
+	{
+		free(line);
+		return (NULL);
+	}
 	ft_clear_buff(buff);
 	return (line);
 }
