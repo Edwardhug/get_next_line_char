@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 10:44:03 by lgabet            #+#    #+#             */
-/*   Updated: 2023/01/08 12:34:01 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/01/08 18:09:12 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,8 +87,6 @@ char	*ft_first_read(char *buff, char *str)
 {
 	int	i;
 
-	if (!buff)
-		return (str);
 	i = 0;
 	while (buff[i])
 		i++;
@@ -103,4 +101,14 @@ char	*ft_first_read(char *buff, char *str)
 	}
 	str[i] = 0;
 	return (str);
+}
+
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }

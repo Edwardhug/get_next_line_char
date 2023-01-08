@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 10:32:15 by lgabet            #+#    #+#             */
-/*   Updated: 2023/01/08 12:51:47 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/01/08 18:08:08 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	// 1. fill line
 	line = ft_fill_line(fd, buff);
-	if (!line)
+	if (!line || ft_strlen(line) == 0)
 		return (NULL);
 	ft_clear_buff(buff);
 	return (line);
@@ -31,10 +31,11 @@ char	*ft_fill_line(int fd, char *buff)
 {
 	int	size_readed;
 	char	*str;
-	
-	//str = NULL;
+
+	size_readed = 1;
+	str = NULL;
 	str = ft_first_read(buff, str);
-	while (1)
+	while (size_readed > 0)
 	{
 		size_readed = read(fd, buff, BUFFER_SIZE);
 		buff[size_readed] = 0;
