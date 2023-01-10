@@ -13,6 +13,8 @@ int	main()
 		printf("%s", line);
 		if (!line)
 			break ;
+		free(line);
 	}
+	free(line);
 	close (fd);
 }

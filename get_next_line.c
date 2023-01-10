@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 10:32:15 by lgabet            #+#    #+#             */
-/*   Updated: 2023/01/10 15:12:05 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/01/10 15:47:41 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || read(fd, buff, 0) < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	// 1. fill line
 	line = ft_fill_line(fd, buff);
 	if (!line)
 		return (NULL);
