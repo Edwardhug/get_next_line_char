@@ -6,11 +6,11 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 10:32:15 by lgabet            #+#    #+#             */
-/*   Updated: 2023/01/08 18:40:24 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/01/10 15:08:56 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/get_next_line.h"
+#include "get_next_line.h"
 
 char	*get_next_line(int fd)
 {
@@ -29,6 +29,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	}
 	ft_clear_buff(buff);
+	free(line);
 	return (line);
 }
 

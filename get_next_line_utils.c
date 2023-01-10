@@ -6,11 +6,11 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 10:44:03 by lgabet            #+#    #+#             */
-/*   Updated: 2023/01/08 18:18:18 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/01/10 15:08:51 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/get_next_line.h"
+#include "get_next_line.h"
 
 char	*ft_strjoin(char *s1, char *s2, int size)
 {
