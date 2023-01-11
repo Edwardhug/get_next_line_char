@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 10:32:15 by lgabet            #+#    #+#             */
-/*   Updated: 2023/01/10 16:07:36 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/01/11 15:19:50 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	ft_clear_buff(char *buff)
 	i = 0;
 	while (str[i] != '\n')
 		i++;
-	while (str[i] == '\n')
+	if (str[i] == '\n')
 		i++;
 	while (str[i])
 		buff[j++] = str[i++];

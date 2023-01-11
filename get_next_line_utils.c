@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 10:44:03 by lgabet            #+#    #+#             */
-/*   Updated: 2023/01/10 15:48:50 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/01/11 15:08:46 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strjoin(char *s1, char *s2, int size)
 	}
 	while (s2[j] && s2[j] != '\n')
 		str[i++] = s2[j++];
-	while (s2[j] == '\n')
+	if (s2[j] == '\n')
 		str[i++] = s2[j++];
 	str[i] = 0;
 	free(s1);
@@ -56,7 +56,7 @@ int	ft_lenline(char *str, char *buff)
 	{
 		while (buff[j])
 		{
-			while (buff[j] == '\n')
+			if (buff[j] == '\n')
 			{
 				j++;
 				if (buff[j] != '\n')
