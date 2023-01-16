@@ -6,7 +6,7 @@ int	main()
 	int	fd;
 	char	*line;
 
-	fd = open("../../francinette/tests/get_next_line/fsoares/multiple_nl.txt", O_RDONLY);
+	fd = open("../../francinette/tests/get_next_line/fsoares/read_error.txt", O_RDONLY);
 	while (1)
 	{
 		line = get_next_line(fd);
