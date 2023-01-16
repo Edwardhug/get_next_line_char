@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 10:32:15 by lgabet            #+#    #+#             */
-/*   Updated: 2023/01/12 12:04:41 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/01/16 14:04:29 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*ft_fill_line(int fd, char *buff)
 
 	size_readed = 1;
 	str = NULL;
-	str = ft_first_read(buff, str);
+	str = ft_strjoin(str, buff, (ft_strlen(str) + ft_strlen_buff(buff)));
 	while (size_readed > 0)
 	{
 		size_readed = read(fd, buff, BUFFER_SIZE);
@@ -64,24 +64,15 @@ void	ft_clear_buff(char *buff)
 {
 	int	i;
 	int	j;
-	char	str[BUFFER_SIZE + 1];
 	
 	if (!have_newline(buff))
 		return ;
 	i = 0;
 	j = 0;
+	while (buff[i] != '\n')
+		i++;
+	i++;
 	while (buff[i])
-	{
-		str[i] = buff[i];
-		i++;
-	}
-	str[i] = 0;
-	i = 0;
-	while (str[i] != '\n')
-		i++;
-	if (str[i] == '\n')
-		i++;
-	while (str[i])
-		buff[j++] = str[i++];
+		buff[j++] = buff[i++];
 	buff[j] = 0;
 }

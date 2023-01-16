@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 10:44:03 by lgabet            #+#    #+#             */
-/*   Updated: 2023/01/12 12:09:52 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/01/16 13:53:22 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,13 @@ int	ft_strlen_buff(char *str)
 	int	i;
 
 	i = 0;
-    if (!str)
-        return (0);
-    while (str[i] && str[i] != '\n')
-        i++;
-    if (str[i] == '\n')
-        i++;
-    return (i);
+	if (!str)
+		return (0);
+	while (str[i] && str[i] != '\n')
+		i++;
+	if (str[i] == '\n')
+		i++;
+	return (i);
 }
 
 int	have_newline(char *str)
@@ -70,30 +70,12 @@ int	have_newline(char *str)
 	return (0);
 }
 
-char	*ft_first_read(char *buff, char *str)
-{
-	int	i;
-
-	i = 0;
-	while (buff[i])
-		i++;
-	str = malloc(sizeof(char) * (i + 1));
-	if (!str)
-		return (NULL);
-	i = 0;
-	while (buff[i])
-	{
-		str[i] = buff[i];
-		i++;
-	}
-	str[i] = 0;
-	return (str);
-}
-
 int	ft_strlen(char *str)
 {
 	int	i;
 
+	if (!str)
+		return (0);
 	i = 0;
 	while (str[i])
 		i++;
