@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 10:29:12 by lgabet            #+#    #+#             */
-/*   Updated: 2023/01/16 13:53:15 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/01/16 14:12:13 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 
 char	*get_next_line(int fd);
 char	*ft_fill_line(int fd, char *buff);
-char	*ft_strjoin(char *s1, char *s2, int size);
+char	*ft_strjoin(char *s1, char *s2);
 int		ft_strlen_buff(char *str);
 int		have_newline(char *str);
 void	ft_clear_buff(char *str);
