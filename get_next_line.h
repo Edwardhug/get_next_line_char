@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 10:29:12 by lgabet            #+#    #+#             */
-/*   Updated: 2023/01/16 17:29:07 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/01/17 10:39:16 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,9 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
 
 # ifndef BUFFER_SIZE
-# define BUFFER_SIZE 10
+#	define BUFFER_SIZE 10
 # endif
 
 char	*get_next_line(int fd);

@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 10:44:03 by lgabet            #+#    #+#             */
-/*   Updated: 2023/01/17 10:29:30 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/01/17 10:34:01 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,10 @@ char	*ft_strjoin(char *s1, char *s2)
 		free(s1);
 		return (NULL);
 	}
-	i = 0;
+	i = -1;
 	j = 0;
-	while (i < len_s1)
-	{
+	while (++i < len_s1)
 		str[i] = s1[i];
-		i++;
-	}
 	while (j < len_s2)
 		str[i++] = s2[j++];
 	str[len_s1 + len_s2] = 0;
