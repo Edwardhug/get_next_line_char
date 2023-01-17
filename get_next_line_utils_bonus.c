@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:00:35 by lgabet            #+#    #+#             */
-/*   Updated: 2023/01/17 12:14:06 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/01/17 13:12:16 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,4 +79,22 @@ int	ft_strlen(char *str)
 	while (str[i])
 		i++;
 	return (i);
+}
+
+int	have_error(char *line, char **buff)
+{
+	if (!line)
+	{
+		free(*buff);
+		(*buff) = NULL;
+		return (1);
+	}
+	if (ft_strlen(line) == 0)
+	{
+		free(line);
+		free(*buff);
+		(*buff) = NULL;
+		return (1);
+	}
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:00:33 by lgabet            #+#    #+#             */
-/*   Updated: 2023/01/17 11:42:05 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/01/17 13:10:31 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ int		ft_strlen_buff(char *str);
 int		have_newline(char *str);
 void	ft_clear_buff(char *str);
 int		ft_strlen(char *str);
+int		have_error(char *line, char **buff);
 
 # endif
