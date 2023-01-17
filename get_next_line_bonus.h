@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:00:33 by lgabet            #+#    #+#             */
-/*   Updated: 2023/01/17 13:10:31 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/01/17 13:17:39 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-# include <stdio.h>
 
-#ifndef BUFFER_SIZE
-# define BUFFER_SIZE 10
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
 # endif
 
 char	*get_next_line(int fd);
@@ -31,4 +30,4 @@ void	ft_clear_buff(char *str);
 int		ft_strlen(char *str);
 int		have_error(char *line, char **buff);
 
-# endif
+#endif
