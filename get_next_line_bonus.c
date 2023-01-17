@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:00:30 by lgabet            #+#    #+#             */
-/*   Updated: 2023/01/17 11:01:29 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/01/17 12:13:53 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,29 @@
 
 char	*get_next_line(int fd)
 {
-	static char	buff[BUFFER_SIZE + 1];
+	static char	*buff[OPEN_MAX];
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	line = ft_fill_line(fd, buff);
+	if (!buff[fd])
+	{
+		buff[fd] = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+		buff[fd][0] = 0;
+	}
+	line = ft_fill_line(fd, buff[fd]);
 	if (!line)
+	{
+		free(buff[fd]);
 		return (NULL);
+	}
 	if (ft_strlen(line) == 0)
 	{
 		free(line);
+		free(buff[fd]);
 		return (NULL);
 	}
-	ft_clear_buff(buff);
+	ft_clear_buff(buff[fd]);
 	return (line);
 }
 

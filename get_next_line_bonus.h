@@ -6,18 +6,20 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:00:33 by lgabet            #+#    #+#             */
-/*   Updated: 2023/01/17 11:02:05 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/01/17 11:42:05 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
+# include <stdio.h>
 
-# ifndef BUFFER_SIZE
-#	define BUFFER_SIZE 10
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 10
 # endif
 
 char	*get_next_line(int fd);
