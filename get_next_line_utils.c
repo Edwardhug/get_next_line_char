@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 10:44:03 by lgabet            #+#    #+#             */
-/*   Updated: 2023/01/16 14:16:02 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/01/17 10:29:30 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ char	*ft_strjoin(char *s1, char *s2)
 	len_s2 = ft_strlen_buff(s2);
 	str = malloc(sizeof(char) * (len_s1 + len_s2 + 1));
 	if (!str)
+	{
+		free(s1);
 		return (NULL);
+	}
 	i = 0;
 	j = 0;
 	while (i < len_s1)
